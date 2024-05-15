@@ -1,5 +1,6 @@
 package com.example.reactive.domain;
 
+import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,25 +9,22 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
-
 @Document(collection = "users")
 @AllArgsConstructor
 @Data
 @Builder
 public class User implements Serializable {
 
-    @Id
-    private final ObjectId id;
-    
-    private final String firstName;
+  @Id private final ObjectId id;
 
-    private final String lastName;
+  private final String firstName;
 
-    private final String nickname;
+  private final String lastName;
 
-    @Indexed(unique = true, background = true)
-    private final String email;
+  private final String nickname;
 
-    private final int age;
+  @Indexed(unique = true, background = true)
+  private final String email;
+
+  private final int age;
 }

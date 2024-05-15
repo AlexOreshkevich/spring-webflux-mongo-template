@@ -15,8 +15,10 @@ Template project for Spring Boot and MongoDB with Reactive REST API (WebFlux)
   separation of component, integration and functional tests
 - Correct example of using `@ServiceConnection` and reusable containers (given in `IntegrationTest`)
 - Test database initialization script (`init-schema.js`)
+- The standard streams (err and out) made visible at console when running tests
 
 ### Plugins
 - Dependency on Lombok replaced
   with [Lombok Gradle Plugin](https://plugins.gradle.org/plugin/io.freefair.lombok)
 - `io.spring.dependency-management` plugin replaced with Gradle `platform` plugin
+- `spotless` configured for Google Code Style for Java (https://github.com/diffplug/spotless/tree/main/plugin-gradle#java)

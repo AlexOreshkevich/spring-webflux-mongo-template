@@ -5,6 +5,9 @@ plugins {
   java
   id("io.freefair.lombok") version "8.6"
   id("org.springframework.boot") version "3.2.5"
+
+  // code style & formatting (https://plugins.gradle.org/plugin/com.diffplug.spotless)
+  id("com.diffplug.spotless") version "6.25.0"
 }
 
 group = "com.example"
@@ -75,5 +78,18 @@ develocity {
     // Adjust according to your CI server:
     // https://docs.gradle.com/develocity/gradle-plugin/current/#configuring_background_uploading
     uploadInBackground.set(false)
+  }
+}
+
+spotless {
+  java {
+    importOrder()
+    removeUnusedImports()
+
+    // Cleanthat will refactor your code, but it may break your style: apply it before your formatter
+    cleanthat()          // has its own section below
+
+    googleJavaFormat()   // has its own section below
+    formatAnnotations()  // fixes formatting of type annotations, see below
   }
 }
