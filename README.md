@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/AlexOreshkevich/spring-webflux-mongo-template/graph/badge.svg?token=WfdvociCUK)](https://codecov.io/gh/AlexOreshkevich/spring-webflux-mongo-template)
 # spring-webflux-mongo-template
 
 Template project for Spring Boot and MongoDB with Reactive REST API (WebFlux)
