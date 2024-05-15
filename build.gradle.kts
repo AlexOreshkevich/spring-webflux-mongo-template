@@ -1,3 +1,6 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
   java
   id("io.freefair.lombok") version "8.6"
@@ -49,6 +52,13 @@ tasks.withType<Test> {
   systemProperty("junit.jupiter.execution.parallel.enabled", true)
   systemProperty("junit.jupiter.execution.parallel.mode.default", "concurrent")
   systemProperty("junit.jupiter.execution.parallel.mode.classes.default", "concurrent")
+
+  testLogging {
+    // makes the standard streams (err and out) visible at console when running tests
+    showStandardStreams = true
+    events(TestLogEvent.FAILED);
+    exceptionFormat = TestExceptionFormat.FULL
+  }
 }
 
 // https://docs.gradle.org/current/userguide/performance.html#execute_tests_in_parallel
