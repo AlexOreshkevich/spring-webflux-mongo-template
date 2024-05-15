@@ -82,6 +82,13 @@ develocity {
 }
 
 spotless {
+  format ("misc") {
+    target("**/*.gradle", "**/*.md", "**/.gitignore")
+
+    trimTrailingWhitespace()
+    indentWithTabs() // or spaces. Takes an integer argument if you don't like 4
+    endWithNewline()
+  }
   java {
     importOrder()
     removeUnusedImports()

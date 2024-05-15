@@ -27,6 +27,8 @@ public abstract class IntegrationTest {
     MONGO_DB_CONTAINER.start();
   }
 
+  // We can't use @ServiceConnection in here because we've chosen init script feature
+  // which is not working on CI/CD with MongoContainer cause it's replica set by default
   @DynamicPropertySource
   static void setProperties(DynamicPropertyRegistry registry) {
     registry.add("spring.data.mongodb.host", MONGO_DB_CONTAINER::getHost);
