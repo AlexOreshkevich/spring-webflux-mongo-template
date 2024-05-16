@@ -1,4 +1,9 @@
-[![codecov](https://codecov.io/gh/AlexOreshkevich/spring-webflux-mongo-template/graph/badge.svg?token=WfdvociCUK)](https://codecov.io/gh/AlexOreshkevich/spring-webflux-mongo-template)
+![example branch parameter](https://github.com/AlexOreshkevich/spring-webflux-mongo-template/actions/workflows/gradle.yml/badge.svg?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AlexOreshkevich_spring-webflux-mongo-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=AlexOreshkevich_spring-webflux-mongo-template)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=AlexOreshkevich_spring-webflux-mongo-template&metric=bugs)](https://sonarcloud.io/summary/new_code?id=AlexOreshkevich_spring-webflux-mongo-template)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=AlexOreshkevich_spring-webflux-mongo-template&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=AlexOreshkevich_spring-webflux-mongo-template)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=AlexOreshkevich_spring-webflux-mongo-template&metric=coverage)](https://sonarcloud.io/summary/new_code?id=AlexOreshkevich_spring-webflux-mongo-template)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=AlexOreshkevich_spring-webflux-mongo-template&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=AlexOreshkevich_spring-webflux-mongo-template)
 # spring-webflux-mongo-template
 
 Template project for Spring Boot and MongoDB with Reactive REST API (WebFlux)
