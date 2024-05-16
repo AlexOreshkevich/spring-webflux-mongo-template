@@ -2,6 +2,7 @@ package com.example.reactive;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.example.reactive.service.OrganizationService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,5 +19,7 @@ class ComponentTest extends IntegrationTest {
     assertThat(context).isNotNull();
     assertThat(MONGO_DB_CONTAINER.isRunning()).isTrue();
     assertThat(context.getBean(ReactiveMongoTemplate.class)).isNotNull();
+
+    assertThat(context.getBean(OrganizationService.class)).isNotNull();
   }
 }

@@ -11,6 +11,9 @@ Template project for Spring Boot and MongoDB with Reactive REST API (WebFlux)
 - Configured `Develocity Gradle plugin` (Gradle Build Scans)
 - Parallel test execution configured for JUnit 5
 
+### DAO layer enhancements
+- [Class-based Projections (DTOs)](https://docs.spring.io/spring-data/mongodb/reference/repositories/projections.html#projections.dtos) (Repositories returns DTO classes with reduced number of fields, using `projection` database feature, no explicit Entity - DTO mapping!)
+
 ### Testing
 - [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) with explicit
 separation of component, integration and functional tests
@@ -23,3 +26,6 @@ separation of component, integration and functional tests
 with [Lombok Gradle Plugin](https://plugins.gradle.org/plugin/io.freefair.lombok)
 - `io.spring.dependency-management` plugin replaced with Gradle `platform` plugin
 - `spotless` configured for Google Code Style for Java (https://github.com/diffplug/spotless/tree/main/plugin-gradle#java)
+
+## Access Swagger
+Navigate to http://localhost:8080/swagger-ui.html
