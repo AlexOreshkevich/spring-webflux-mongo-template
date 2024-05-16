@@ -1,1 +1,5 @@
 spring.application.name: webflux-mongo-template
+
+spring.data.mongodb:
+  database: demo
+  port: 27017

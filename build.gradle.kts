@@ -28,14 +28,16 @@ repositories {
 }
 
 dependencies {
-  // Spring Boot 3.X
-  implementation(platform("org.springframework.boot:spring-boot-dependencies:3.2.5"))
+  // Spring Boot 3.X (enforced means versions used in BOM will override any other version found in the graph)
+  // See https://docs.gradle.org/current/userguide/platforms.html#sub:bom_import
+  implementation(enforcedPlatform("org.springframework.boot:spring-boot-dependencies:3.2.5"))
 
   // Infra
   implementation("org.springframework.boot:spring-boot-starter-actuator")
 
   // Reactive REST API
   implementation("org.springframework.boot:spring-boot-starter-webflux")
+  implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.5.0")
 
   // Reactive MongoDB
   implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
