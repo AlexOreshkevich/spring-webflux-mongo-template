@@ -1,7 +1,13 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
   java
   id("io.freefair.lombok") version "8.6"
   id("org.springframework.boot") version "3.2.5"
+
+  // code style & formatting (https://plugins.gradle.org/plugin/com.diffplug.spotless)
+  id("com.diffplug.spotless") version "6.25.0"
 }
 
 group = "com.example"
@@ -49,6 +55,13 @@ tasks.withType<Test> {
   systemProperty("junit.jupiter.execution.parallel.enabled", true)
   systemProperty("junit.jupiter.execution.parallel.mode.default", "concurrent")
   systemProperty("junit.jupiter.execution.parallel.mode.classes.default", "concurrent")
+
+  testLogging {
+    // makes the standard streams (err and out) visible at console when running tests
+    showStandardStreams = true
+    events(TestLogEvent.FAILED);
+    exceptionFormat = TestExceptionFormat.FULL
+  }
 }
 
 // https://docs.gradle.org/current/userguide/performance.html#execute_tests_in_parallel
@@ -65,5 +78,25 @@ develocity {
     // Adjust according to your CI server:
     // https://docs.gradle.com/develocity/gradle-plugin/current/#configuring_background_uploading
     uploadInBackground.set(false)
+  }
+}
+
+spotless {
+  format ("misc") {
+    target("**/*.gradle", "**/*.md", "**/.gitignore")
+
+    trimTrailingWhitespace()
+    indentWithTabs() // or spaces. Takes an integer argument if you don't like 4
+    endWithNewline()
+  }
+  java {
+    importOrder()
+    removeUnusedImports()
+
+    // Cleanthat will refactor your code, but it may break your style: apply it before your formatter
+    cleanthat()          // has its own section below
+
+    googleJavaFormat()   // has its own section below
+    formatAnnotations()  // fixes formatting of type annotations, see below
   }
 }
